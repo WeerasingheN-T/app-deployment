@@ -1,0 +1,17 @@
+services:
+  frontend:
+    image: react-frontend
+    build:
+      context: ./employee_service_frontend/react-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    image: springboot-backend
+    build:
+      context: ./employee_service_backend/springboot-backend
+    ports:
+       - "8080:8080"
+
